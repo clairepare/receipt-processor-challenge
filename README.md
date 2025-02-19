@@ -28,7 +28,7 @@ docker run -p 8000:8000 receipt-processor
 
 ## API Endpoints
 ### 1. Process a Receipt
-Endpoint: POST /receipts/process
+Endpoint: `POST /receipts/process`
 
 Example Receipt:
 ```json
@@ -62,7 +62,7 @@ Example Response:
 { "id": "adb6b560-0eef-42bc-9d16-df48f30e89b2" }
 ```
 ### 2. Get Receipt Points
-Endpoint: GET /receipts/{id}/points
+Endpoint: `GET /receipts/{id}/points`
 
 Example Request:
 ```sh
