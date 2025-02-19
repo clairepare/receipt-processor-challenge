@@ -14,6 +14,7 @@ This is a FastAPI-based web service for processing receipts and awarding points 
 ### **Clone the Repository**
 ```sh
 git clone https://github.com/clairepare/receipt-processor-challenge.git
+cd receipt-processor-challenge
 ```
 
 ## Run Locally
@@ -70,7 +71,7 @@ curl -X GET "http://localhost:8000/receipts/7fb1377b-b223-49d9-a31a-5a02701dd310
 ```
 Example Response:
 ```json
-{ "points": 109 }
+{ "points": 99 }
 ```
 
 ## Development Notes
