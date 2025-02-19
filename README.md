@@ -13,8 +13,7 @@ This is a FastAPI-based web service for processing receipts and awarding points 
 
 ### **Clone the Repository**
 ```sh
-git clone https://github.com/clairepare/receipt-processor.git
-cd receipt-processor
+git clone https://github.com/clairepare/receipt-processor-challenge.git
 ```
 
 ## Run Locally
@@ -31,7 +30,7 @@ docker run -p 8000:8000 receipt-processor
 ### 1. Process a Receipt
 Endpoint: POST /receipts/process
 
-Example Request:
+Example Receipt:
 ```json
 {
   "retailer": "M&M Corner Market",
@@ -43,6 +42,20 @@ Example Request:
   "total": "9.00"
 }
 ```
+Example Request:
+```sh
+curl -X POST "http://localhost:8000/receipts/process" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "retailer": "M&M Corner Market",
+  "purchaseDate": "2022-03-20",
+  "purchaseTime": "14:33",
+  "items": [
+    { "shortDescription": "Gatorade", "price": "2.25" }
+  ],
+  "total": "9.00"
+}'
+```
 Example Response:
 ```json
 
@@ -51,6 +64,10 @@ Example Response:
 ### 2. Get Receipt Points
 Endpoint: GET /receipts/{id}/points
 
+Example Request:
+```sh
+curl -X GET "http://localhost:8000/receipts/7fb1377b-b223-49d9-a31a-5a02701dd310/points"
+```
 Example Response:
 ```json
 { "points": 109 }
